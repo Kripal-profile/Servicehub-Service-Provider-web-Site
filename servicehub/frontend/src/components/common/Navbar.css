@@ -1,0 +1,57 @@
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(11,15,25,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  height: 64px;
+}
+.navbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 100%;
+}
+.navbar-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800;
+  color: var(--text); text-decoration: none;
+}
+.brand-icon { font-size: 22px; }
+.brand-name { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.navbar-links {
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-link {
+  padding: 8px 14px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 500; color: var(--text2);
+  transition: all 0.2s; text-decoration: none;
+}
+.nav-link:hover, .nav-link.active { color: var(--text); background: var(--surface); }
+.nav-user {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 12px; background: var(--surface); border-radius: 20px;
+  border: 1px solid var(--border);
+}
+.nav-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: white;
+}
+.nav-name { font-size: 14px; font-weight: 500; color: var(--text); }
+.nav-role-badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.nav-role-badge.client { background: rgba(59,130,246,0.15); color: var(--accent2); }
+.nav-role-badge.provider { background: rgba(139,92,246,0.15); color: #a78bfa; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text2); border-radius: 2px; transition: 0.3s; }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .navbar-links {
+    display: none; position: fixed; top: 64px; left: 0; right: 0;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 16px; gap: 8px; align-items: stretch;
+  }
+  .navbar-links.open { display: flex; }
+  .nav-link { text-align: center; }
+}

@@ -1,0 +1,28 @@
+.auth-page {
+  min-height: calc(100vh - 64px); display: flex; align-items: center; justify-content: center;
+  padding: 40px 16px; background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.07) 0%, transparent 60%);
+}
+.auth-card {
+  width: 100%; max-width: 440px;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 40px; animation: fadeIn 0.4s ease;
+}
+.auth-card-wide { max-width: 560px; }
+.auth-header { text-align: center; margin-bottom: 32px; }
+.auth-logo { font-size: 40px; margin-bottom: 16px; }
+.auth-header h1 { font-size: 28px; color: var(--text); margin-bottom: 8px; }
+.auth-header p { color: var(--text3); font-size: 15px; }
+.auth-submit { width: 100%; justify-content: center; margin-top: 8px; }
+.auth-footer { text-align: center; font-size: 14px; color: var(--text3); margin-top: 20px; }
+.auth-footer a { color: var(--accent2); }
+
+.role-toggle { display: flex; gap: 8px; margin-bottom: 28px; background: var(--surface); border-radius: var(--radius-sm); padding: 4px; }
+.role-btn {
+  flex: 1; padding: 10px; background: transparent; border: none;
+  border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--text3); transition: all 0.2s; cursor: pointer;
+}
+.role-btn.active { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(59,130,246,0.3); }
+.role-btn:hover:not(.active) { color: var(--text); background: var(--surface2); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } .auth-card { padding: 28px 20px; } }
